@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informações sobre a Linguagem R</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Informações sobre a Linguagem R</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="instalacao.html">Instalação</a></li>
+                <li><a href="informacoes.html">Informações sobre R</a></li>
+                <li><a href="programas.html">Programas</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="historia">
+            <h2>História da Linguagem R</h2>
+            <p>A linguagem R foi criada por Ross Ihaka e Robert Gentleman na Universidade de Auckland, Nova Zelândia, no início dos anos 90. Ela foi inspirada na linguagem S e se tornou uma das linguagens mais populares para análise estatística e ciência de dados. Desde então, R tem evoluído continuamente com contribuições de uma vasta comunidade de desenvolvedores ao redor do mundo.</p>
+        </section>
+        
+        <section class="sintaxe">
+            <h2>Sintaxe Básica</h2>
+            <p>A sintaxe da linguagem R é relativamente simples e intuitiva, o que a torna acessível para iniciantes. Aqui estão alguns exemplos básicos:</p>
+            <ul>
+                <li><strong>Atribuição:</strong> <code>x <- 10</code></li>
+                <li><strong>Operações matemáticas:</strong> <code>soma <- x + 5</code></li>
+                <li><strong>Criação de vetores:</strong> <code>vetor <- c(1, 2, 3, 4, 5)</code></li>
+                <li><strong>Funções básicas:</strong> <code>media <- mean(vetor)</code></li>
+            </ul>
+        </section>
+        
+        <section class="variaveis">
+            <h2>Variáveis em R</h2>
+            <p>Variáveis em R são usadas para armazenar dados. Você pode criar uma variável simplesmente atribuindo um valor a ela:</p>
+            <pre><code>x <- 42</code></pre>
+            <p>R é uma linguagem fortemente tipada, mas você não precisa declarar o tipo da variável explicitamente. Aqui estão alguns tipos comuns de variáveis em R:</p>
+            <ul>
+                <li><strong>Números:</strong> <code>x <- 42</code></li>
+                <li><strong>Texto:</strong> <code>nome <- "R Programming"</code></li>
+                <li><strong>Vetores:</strong> <code>vetor <- c(1, 2, 3, 4, 5)</code></li>
+                <li><strong>Matrizes:</strong> <code>matriz <- matrix(1:9, nrow=3)</code></li>
+                <li><strong>Data Frames:</strong> <code>dados <- data.frame(x = 1:5, y = 6:10)</code></li>
+            </ul>
+        </section>
+        
+        <section class="funcoes">
+            <h2>Funções em R</h2>
+            <p>Funções são blocos de código que podem ser reutilizados em diferentes partes de um programa. Em R, você pode definir suas próprias funções utilizando a seguinte sintaxe:</p>
+            <pre><code>
+minha_funcao <- function(arg1, arg2) {
+  resultado <- arg1 + arg2
+  return(resultado)
+}
+resultado <- minha_funcao(5, 3)
+            </code></pre>
+            <p>Além das funções definidas pelo usuário, R possui muitas funções integradas para tarefas comuns, como <code>sum()</code>, <code>mean()</code>, <code>median()</code>, e muitas outras.</p>
+        </section>
+        
+        <section class="estrutura">
+            <h2>Estrutura de Controle</h2>
+            <p>R suporta várias estruturas de controle para manipular o fluxo do programa, incluindo:</p>
+            <ul>
+                <li><strong>Condicionais:</strong> <code>if, else if, else</code></li>
+                <li><strong>Loops:</strong> <code>for, while</code></li>
+                <li><strong>Aplicação de funções em estruturas de dados:</strong> <code>apply, lapply, sapply</code></li>
+            </ul>
+            <pre><code>
+# Exemplo de condicional
+x <- 10
+if (x > 0) {
+  print("x é positivo")
+} else {
+  print("x é negativo ou zero")
+}
+
+# Exemplo de loop
+for (i in 1:5) {
+  print(i)
+}
+            </code></pre>
+        </section>
+        
+        <section class="video">
+            <h2>Vídeo</h2>
+            <video controls>
+                <source src="videos/tutorial-informacoes.mp4" type="video/mp4">
+                Seu navegador não suporta a tag de vídeo.
+            </video>
+        </section>
+    </main>
+</body>
+</html>
