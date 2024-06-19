@@ -13,46 +13,108 @@
             <ul>
                 <li><a href="index.html">Início</a></li>
                 <li><a href="instalacao.html">Instalação</a></li>
-                <li><a href="informacoes.html">Informações sobre R</a></li>
-                <li><a href="programas.html">Programas</a></li>
+                <li><a href="informacoes.html">Informações</a></li>
+                <li><a href="programas.html">Programa</a></li>
             </ul>
         </nav>
     </header>
     <main>
         <section class="programa">
-            <h2>Calculadora Simples</h2>
-            <p>Este programa funciona como uma calculadora, realizando operações de adição, subtração, multiplicação e divisão.</p>
-            <pre><code>
-# Definindo os números
-numero1 <- 10
-numero2 <- 5
-
-# Adição
-adicao <- numero1 + numero2
-print(paste("Adição:", adicao))
-
-# Subtração
-subtracao <- numero1 - numero2
-print(paste("Subtração:", subtracao))
-
-# Multiplicação
-multiplicacao <- numero1 * numero2
-print(paste("Multiplicação:", multiplicacao))
-
-# Divisão
-divisao <- numero1 / numero2
-print(paste("Divisão:", divisao))
-            </code></pre>
-            <p><strong>Explicação:</strong> Definimos dois números, <code>numero1</code> e <code>numero2</code>. Em seguida, realizamos as operações de adição, subtração, multiplicação e divisão, armazenando os resultados em variáveis separadas. Finalmente, usamos a função <code>print()</code> para exibir os resultados de cada operação.</p>
-        </section>
-        
-        <section class="video">
-            <h2>Vídeo</h2>
-            <video controls>
-                <source src="videos/tutorial-programas.mp4" type="video/mp4">
-                Seu navegador não suporta a tag de vídeo.
-            </video>
-        </section>
+            <h2>Calculos</h2>
+            <p>Este programa calcula alguns fatores básicos de um número</p>
+            <pre><code># Função para calcular o fatorial
+                fatorial <- function(n) {
+                  if (n == 0) return(1)
+                  return(prod(1:n))
+                }
+                
+                # Função para verificar se um número é primo
+                eh_primo <- function(n) {
+                  if (n <= 1) return(FALSE)
+                  for (i in 2:sqrt(n)) {
+                    if (n %% i == 0) return(FALSE)
+                  }
+                  return(TRUE)
+                }
+                
+                # Função para verificar se um número é par
+                eh_par <- function(n) {
+                  return(n %% 2 == 0)
+                }
+                
+                # Função para calcular o quadrado de um número
+                quadrado <- function(n) {
+                  return(n^2)
+                }
+                
+                # Função para calcular o cubo de um número
+                cubo <- function(n) {
+                  return(n^3)
+                }
+                
+                # Bibliotecas necessárias
+                library(ggplot2)
+                
+                # Loop principal
+                repeat {
+                  # Entrada do usuário
+                  numero <- as.numeric(readline(prompt="Entre com um número: "))
+                  
+                  # Cálculo e verificação
+                  fatorial_resultado <- fatorial(numero)
+                  primo_resultado <- eh_primo(numero)
+                  par_resultado <- eh_par(numero)
+                  quadrado_resultado <- quadrado(numero)
+                  cubo_resultado <- cubo(numero)
+                  
+                  # Exibição dos resultados
+                  print(paste("Fatorial de", numero, "é", fatorial_resultado))
+                  print(paste(numero, "é primo?", primo_resultado))
+                  print(paste(numero, "é par?", par_resultado))
+                  print(paste("Quadrado de", numero, "é", quadrado_resultado))
+                  print(paste("Cubo de", numero, "é", cubo_resultado))
+                  
+                  # Gerar dados para o gráfico
+                  operacoes <- c("Fatorial", "Quadrado", "Cubo")
+                  resultados <- c(fatorial_resultado, quadrado_resultado, cubo_resultado)
+                  df_resultados <- data.frame(Operacao = operacoes, Resultado = resultados)
+                  
+                  # Gerar gráfico de barras verticais dos resultados
+                  grafico_resultados <- ggplot(df_resultados, aes(x = Operacao, y = Resultado, fill = Operacao)) +
+                    geom_bar(stat = "identity", width = 0.5, color = "white", alpha = 0.8) +
+                    labs(title = paste("Resultados para o número", numero), x = "Operação", y = "Resultado") +
+                    theme_minimal() +
+                    theme(
+                      plot.title = element_text(size = 8, face = "bold", color = "white"),
+                      axis.title.x = element_text(size = 5, color = "white"),
+                      axis.title.y = element_text(size = 5, color = "white"),
+                      axis.text.x = element_text(size = 5, color = "white"),
+                      axis.text.y = element_text(size = 5, color = "white"),
+                      legend.title = element_blank(),
+                      legend.position = "none",
+                      panel.grid.major = element_blank(),
+                      panel.grid.minor = element_blank(),
+                      panel.background = element_rect(fill = "black", color = "black"),
+                      plot.background = element_rect(fill = "black", color = "black"),
+                      axis.line = element_line(color = "white"),
+                      axis.ticks = element_line(color = "white")
+                    )
+                  
+                  # Salvar o gráfico como PNG
+                  nome_arquivo <- paste("resultados_numero_", numero, ".png", sep = "")
+                  ggsave(nome_arquivo, plot = grafico_resultados, width = 800, height = 600, units = "px")
+                  
+                  # Perguntar ao usuário se deseja continuar
+                  continuar <- readline(prompt="Deseja verificar outro número? (s/n): ")
+                  if (tolower(continuar) != "s") {
+                    break
+                  }
+                  cat("\n")
+                }
+                
+                print("Programa encerrado.")
+                </code></pre>
+            </section>
     </main>
 </body>
 </html>

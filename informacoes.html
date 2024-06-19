@@ -14,6 +14,7 @@
                 <li><a href="index.html">Início</a></li>
                 <li><a href="instalacao.html">Instalação</a></li>
                 <li><a href="informacoes.html">Informações</a></li>
+                <li><a href="programas.html">Programa</a></li>
             </ul>
         </nav>
     </header>
@@ -21,6 +22,13 @@
         <section class="historia">
             <h2>História da Linguagem R</h2>
             <p>A linguagem R foi criada por Ross Ihaka e Robert Gentleman na Universidade de Auckland, Nova Zelândia, no início dos anos 90. Ela foi inspirada na linguagem S e se tornou uma das linguagens mais populares para análise estatística e ciência de dados. Desde então, R tem evoluído continuamente com contribuições de uma vasta comunidade de desenvolvedores ao redor do mundo.</p>
+        </section>
+
+        <section class="introducao">
+            <h2>Introdução à Linguagem R</h2>
+            <p>A linguagem R é uma linguagem de programação e um ambiente de software livre utilizado para computação estatística e gráficos. Desenvolvida originalmente por Ross Ihaka e Robert Gentleman no início dos anos 1990 na Universidade de Auckland, na Nova Zelândia, R rapidamente se tornou uma das ferramentas favoritas entre estatísticos, analistas de dados, cientistas de dados e pesquisadores. R é mantida pela R Foundation for Statistical Computing e sua popularidade se deve à sua flexibilidade, capacidade de análise complexa de dados e à vasta gama de pacotes disponíveis para praticamente qualquer tipo de análise.</p>
+            <p><strong>Principais usos:</strong> A linguagem R é especialmente poderosa para realizar análises estatísticas avançadas, visualização de dados sofisticada, machine learning, análise de séries temporais e mineração de dados. Além disso, é amplamente utilizada em bioinformática, econometria, ciências sociais, marketing, finanças e muitas outras áreas que requerem análise de dados intensiva.</p>
+            <p><strong>Comparação com outras linguagens:</strong> R é frequentemente comparada a outras linguagens de análise de dados, como Python, SAS e SPSS. Uma das principais vantagens de R é a sua especialização em estatísticas e visualização, oferecendo uma grande variedade de pacotes e funções específicas para estas tarefas. Em comparação, Python é uma linguagem de propósito geral mais ampla, que também possui fortes bibliotecas para análise de dados, mas é mais versátil em outras áreas da programação. SAS e SPSS são softwares comerciais com foco em análise de dados, mas R tem a vantagem de ser open source e ter uma comunidade ativa que contribui continuamente com novos pacotes e melhorias.</p>
         </section>
         
         <section class="sintaxe">
@@ -32,6 +40,24 @@
                 <li><strong>Criação de vetores:</strong> <code>vetor <- c(1, 2, 3, 4, 5)</code></li>
                 <li><strong>Funções básicas:</strong> <code>media <- mean(vetor)</code></li>
             </ul>
+            <p>A sintaxe do R é intuitiva e poderosa, permitindo que os usuários realizem operações complexas com poucas linhas de código. R suporta variáveis, operadores aritméticos e lógicos, e uma ampla gama de funções que facilitam a manipulação de dados. A linguagem utiliza o símbolo <code>&lt;-</code> para atribuição de valores, embora o símbolo <code>=</code> também seja aceito.</p>
+            <pre><code># Atribuição de valores a variáveis
+x <- 5
+y <- 10
+
+# Operações aritméticas
+soma <- x + y
+produto <- x * y
+
+# Funções básicas
+media <- mean(c(x, y))
+desvio_padrao <- sd(c(x, y))
+
+# Imprimir resultados
+print(soma)
+print(produto)
+print(media)
+print(desvio_padrao)</code></pre>
         </section>
         
         <section class="variaveis">
@@ -47,7 +73,33 @@
                 <li><strong>Data Frames:</strong> <code>dados <- data.frame(x = 1:5, y = 6:10)</code></li>
             </ul>
         </section>
-        
+
+        <section class="estruturas-de-dados">
+            <h2>Estruturas de Dados</h2>
+            <p>R possui diversas estruturas de dados fundamentais, incluindo vetores, matrizes, listas e data frames. Vetores são sequências de elementos do mesmo tipo, enquanto matrizes são vetores bidimensionais. Listas podem conter elementos de diferentes tipos, tornando-as flexíveis para armazenar conjuntos de dados complexos. Data frames são tabelas que permitem a manipulação e análise de dados tabulares, similares a tabelas de banco de dados ou planilhas do Excel.</p>
+            <pre><code># Vetor
+vetor <- c(1, 2, 3, 4, 5)
+
+# Matriz
+matriz <- matrix(1:9, nrow = 3, ncol = 3)
+
+# Lista
+lista <- list(nome = "João", idade = 25, notas = c(7.5, 8.0, 9.0))
+
+# Data frame
+data_frame <- data.frame(
+  nome = c("Ana", "Bruno", "Carlos"),
+  idade = c(22, 25, 30),
+  nota = c(8.5, 9.0, 7.5)
+)
+
+# Exibir estruturas
+print(vetor)
+print(matriz)
+print(lista)
+print(data_frame)</code></pre>
+        </section>
+
         <section class="funcoes">
             <h2>Funções em R</h2>
             <p>Funções são blocos de código que podem ser reutilizados em diferentes partes de um programa. Em R, você pode definir suas próprias funções utilizando a seguinte sintaxe:</p>
@@ -59,39 +111,72 @@ minha_funcao <- function(arg1, arg2) {
 resultado <- minha_funcao(5, 3)
             </code></pre>
             <p>Além das funções definidas pelo usuário, R possui muitas funções integradas para tarefas comuns, como <code>sum()</code>, <code>mean()</code>, <code>median()</code>, e muitas outras.</p>
+            <p>Além de suas capacidades de análise de dados, R é uma linguagem de programação completa. Os usuários podem definir suas próprias funções, utilizar loops (<code>for</code>, <code>while</code>) e condicionais (<code>if</code>, <code>else</code>), e implementar algoritmos complexos. A programação em R permite automatizar tarefas repetitivas e desenvolver scripts reprodutíveis para análises.</p>
+            <pre><code># Definindo uma função
+soma <- function(a, b) {
+  return(a + b)
+}
+
+# Utilizando a função
+resultado <- soma(5, 10)
+print(resultado)
+
+# Loop for
+for (i in 1:5) {
+  print(i)
+}
+
+# Condicional if
+x <- 10
+if (x > 5) {
+  print("x é maior que 5")
+} else {
+  print("x não é maior que 5")
+}</code></pre>
         </section>
         
         <section class="estrutura">
             <h2>Estrutura de Controle</h2>
             <p>R suporta várias estruturas de controle para manipular o fluxo do programa, incluindo:</p>
             <ul>
-                <li><strong>Condicionais:</strong> <code>if, else if, else</code></li>
-                <li><strong>Loops:</strong> <code>for, while</code></li>
-                <li><strong>Aplicação de funções em estruturas de dados:</strong> <code>apply, lapply, sapply</code></li>
+                <li><strong>Condicionais:</strong> <code>if</code>, <code>else</code>, <code>else if</code></li>
+                <li><strong>Loops:</strong> <code>for</code>, <code>while</code></li>
+                <li><strong>Funções de Aplicação:</strong> <code>apply</code>, <code>lapply</code>, <code>sapply</code></li>
             </ul>
-            <pre><code>
-# Exemplo de condicional
-x <- 10
-if (x > 0) {
-  print("x é positivo")
-} else {
-  print("x é negativo ou zero")
-}
+        </section>
 
-# Exemplo de loop
-for (i in 1:5) {
-  print(i)
-}
+        <section class="analise">
+            <h2>Análise de Dados com R</h2>
+            <p>R é extremamente poderoso para análise de dados, oferecendo uma ampla gama de funções e pacotes. Você pode realizar desde análises estatísticas simples até modelagens complexas com facilidade.</p>
+            <p>Alguns dos pacotes mais populares para análise de dados incluem:</p>
+            <ul>
+                <li><strong>dplyr:</strong> Manipulação de dados</li>
+                <li><strong>ggplot2:</strong> Visualização de dados</li>
+                <li><strong>tidyr:</strong> Organização de dados</li>
+                <li><strong>caret:</strong> Machine Learning</li>
+            </ul>
+            <p>Exemplo de análise simples:</p>
+            <pre><code># Instalar e carregar pacotes
+install.packages("dplyr")
+install.packages("ggplot2")
+library(dplyr)
+library(ggplot2)
+
+# Carregar um dataset
+data <- mtcars
+
+# Análise exploratória
+summary(data)
+
+# Visualização
+ggplot(data, aes(x = mpg, y = hp)) + geom_point() + theme_minimal()
             </code></pre>
         </section>
-        
-        <section class="video">
-            <h2>Vídeo</h2>
-            <video controls>
-                <source src="videos/tutorial-informacoes.mp4" type="video/mp4">
-                Seu navegador não suporta a tag de vídeo.
-            </video>
+        <section class="video-tutorial">
+            <h2>Tutorial em Vídeo</h2>
+            <div class="video-container">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/RQrgRCO7-EQ?si=XK-TkkzPE6qRPdRX" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
         </section>
-    </main>
 </body>
 </html>
